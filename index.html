@@ -1,146 +1,76 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<html>
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Digital Portfolio</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday Nandhana 🎉</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 0px;
-            padding: 5px;
-            background-color: #f0f0f0;
-        }
-
-        header {
-            background-color: #333;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1522327646852-05b06b530b9a?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
             color: #fff;
             text-align: center;
-            padding: 2rem 0;
-            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
-        .header-content h1 {
-            font-size: 2.5rem;
-            background-color: azure rgba(0, 0, 0);
+        h1 {
+            font-size: 3.2rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(0,0,0,0.7);
         }
 
-        .profile-picture {
+        p {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        #cake {
             width: 200px;
-            height: 200px;
-            border-radius: 80%;
-            object-fit: cover;
-            position:absolute;
-            top: 75px;
-            left: 75px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
         }
 
-        nav {
-            background-color:rgb(144, 206,206);
-            color:black;
-            text-align: center;
+        #cake:hover {
+            transform: scale(1.05);
         }
 
-        nav ul {
-            list-style-type: none;
-            background-color: rgb(78, 179,183);
-            padding: 10px;
+        #message {
+            margin-top: 25px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: none;
+            text-shadow: 0 0 8px rgba(255,255,255,0.8);
         }
+    </style>
+</head>
+<body>
+    <h1>Happy Birthday, Nandhana! 🎂💛</h1>
+    <p>Click the cake to cut it and reveal your surprise 🎉</p>
 
-        nav ul li {
-            display: inline;
-            margin: 0 20px;
-        }
+    <img id="cake" src="cake.jpg" alt="Birthday Cake" />
 
-        nav ul li a {
-            text-decoration: none;
-            color: #fff;
-        }
+    <div id="message">May your year be filled with happiness, love and success 💛🎉</div>
 
-        .section content {
-            background-color:rgb(78, 179,183);
-            padding: 2rem;
-            margin: 1rem;
-            border-radius: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.10);
-        }
+    <script>
+        const cake = document.getElementById('cake');
+        const message = document.getElementById('message');
+        let cut = false;
 
-        .download-button {
-            background-color: #333;
-            color: #fff;
-            padding: 0.5rem 1rem;
-            text-decoration: none;
-            border-radius: 20px;
-            display: inline-block;
-            margin-top: 10px;
-        }
-
-        .download-button:hover {
-            background-color: #555;
-        }
-
-        footer {
-            text-align: center;
-            padding: 1rem 0px;
-            background-color: 333;
-            color: #fff;
-        }
-
-        vl {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
-        </style>
-        <link rel="stylesheet" type="text/css" href="pro.css"></link>
-        </head>
-        <body>
-            <header>
-                <div class="header-content">
-                    <h1>Sajeer Khan U</h1>
-                    <p>Student</p>
-                </div>
-            </header>
-            <nav>
-                <ul>
-                    <li>About</a></li>
-                    <li>Education</a></li>
-                    <li>Skills</a></li>
-                    <li>Resume</a></li>
-                </ul>
-            </nav>
-            <section id="about">
-                <div class="section-content">
-                    <h2>About Me</h2>
-                    <p>Hello everyone ! </p>
-                    <p>This is Sajeer Khan and I am an BCA Student.</p>
-                    <p>I invest my time i learning new skills and improving my abilities.</p>
-                </div>
-            </section>
-            <section id="education">
-                <div class="section-content">
-                    <h2>Education</h2>
-                    <p>I am currently pursuing my BCA degree. </p>
-                </div>
-            </section>
-            <section id="skills">
-                <div class="section-content">
-                    <h2>Skills</h2>
-                    <ul>
-                        <li>Python programming</li>
-                        <li>C++programming</li>
-                        <li>HTML,CSS</li>
-                    </ul>
-                </div>
-            </section>
-            <section id="resume">
-                <center>
-                    <div class="section-content">
-                        <h2>Resume</h2>
-                        <a href="Sajeer resume.pdf"><button>Download CV</button></a>
-                    </div>
-                </center>
-            </section>
-        </body>
-        </html>
+        cake.addEventListener('click', () => {
+            if (!cut) {
+                cake.src = "cut.jpg"; // Cut cake image
+                message.style.display = 'block';
+                cut = true;
+            }
+        });
+    </script>
+</body>
+</html>
